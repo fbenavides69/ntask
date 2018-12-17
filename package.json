@@ -1,0 +1,22 @@
+{
+  "name": "ntask-api",
+  "version": "1.0.0",
+  "description": "Task List API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Francisco Benavides <francisco.benavides@unosquare.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0"
+  },
+  "dependencies": {
+    "consign": "^0.1.6",
+    "express": "^4.16.4",
+    "sequelize": "^4.42.0",
+    "sqlite3": "^4.0.4"
+  }
+}
