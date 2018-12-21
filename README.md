@@ -116,3 +116,16 @@ Building APIs with Node.js Examples
 - Create the `/token` endpoint in `routes/token.js` with the logic for suplying the JWT to be used
 - Update `routes/tasks.js` with the authentication verification adding the `.all(app.auth.authenticate())`
 - Refactor `routes/users.js` to use `.all(app.auth.authenticate())` and verify against `req.user.id`
+
+## Chapter 8 :: Testing the Application: Part 1
+
+- Move `libs/config.js` to `libs/config.development.js` then duplicate it as `libs/config.test.js`
+  - Add to the `libs/config.test.js` the `logging: false` parameter
+- Create the `libs/config.js` file for use of the `process.env.NODE_ENV` variable
+- Install new development packages: `npm install babel-register mocha chai supertest --save-dev`
+- Update `package.json` with a new run scritp: `"test": "NODE_ENV=test mocha test/**/*.js`
+  - Update `index.js` with `module.exports = app;` and `consign({ verbose: false })`
+  - Update `libs/boot.js` to use the `process.env.NODE_ENV` variable
+  - Create `test/helpers.js` and `test/mocha.opts`
+  - Create the first test `test/routes/index.js`
+  - Execute the first test: `npm test`
