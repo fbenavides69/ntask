@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 const Sequelize = require('sequelize');
 
 let db = null;
@@ -18,7 +18,7 @@ module.exports = app => {
       Sequelize,
       models: {}
     };
-    const dir = path.join(__dirname, "models");
+    const dir = path.join(__dirname, 'models');
     fs.readdirSync(dir).forEach(file => {
       const modelDir = path.join(dir, file);
       const model = sequelize.import(modelDir);

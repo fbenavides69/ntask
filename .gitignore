@@ -8,3 +8,6 @@ yarn.lock
 .idea
 .DS_Store
 .sass-cache
+
+# SQLite
+*.sqlite
