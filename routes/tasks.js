@@ -33,9 +33,9 @@ module.exports = app => {
       }})
         .then(result => {
           if (result) {
-            res.json(result);
+            return res.json(result);
           } else {
-            res.sendStatus(404);
+            return res.sendStatus(404);
           }
         })
         .catch(error => {
