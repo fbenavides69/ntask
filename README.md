@@ -129,3 +129,6 @@ Building APIs with Node.js Examples
   - Create `test/helpers.js` and `test/mocha.opts`
   - Create the first test `test/routes/index.js`
   - Execute the first test: `npm test`
+- Fixes due to used of latest `Sequelize` ORM
+  - Now the `Tasks` model `associate` attribute is redefined as: `Tasks.associate`
+  - The same goes for `Users` model attributess: `Users.associate` and `Users.isPassowrd`
