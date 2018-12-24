@@ -10,7 +10,7 @@ module.exports = app => {
   };
 
   const strategy = new Strategy(params, (payload, done) => {
-    Users.findById(payload.id)
+    Users.findByPk(payload.id)
       .then(user => {
         if (user) {
           return done(null, {
@@ -24,6 +24,14 @@ module.exports = app => {
   });
 
   passport.use(strategy);
+
+  passport.serializeUser((user, done) => {
+    done(null, user);
+  });
+  
+  passport.deserializeUser((user, done) => {
+    done(null, user);
+  });
 
   return {
     initialize: () => {
