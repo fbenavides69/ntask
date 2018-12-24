@@ -142,3 +142,9 @@ Building APIs with Node.js Examples
     - Fix `expected` clauses to use `res.text` instead of `res.body`
   - Add `passport.serializeUser` and `passport.deserializeUser`
   - Fix `find*` methods with `where` clause, changing `user_id` to `UserId`
+
+## Chapter 10 :: Documenting the API
+- Install `npm install apidoc --save-dev`
+- Update `package.json` to add the **apidoc** command
+- Create `public/` folder and update `middleware.js`
+- Add APIdoc on API implementations

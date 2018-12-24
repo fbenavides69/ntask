@@ -11,3 +11,7 @@ yarn.lock
 
 # SQLite
 *.sqlite
+*.sqlite3
+
+# Apidoc
+public/apidoc/
