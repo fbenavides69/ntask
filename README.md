@@ -144,7 +144,24 @@ Building APIs with Node.js Examples
   - Fix `find*` methods with `where` clause, changing `user_id` to `UserId`
 
 ## Chapter 10 :: Documenting the API
+
 - Install `npm install apidoc --save-dev`
 - Update `package.json` to add the **apidoc** command
 - Create `public/` folder and update `middleware.js`
 - Add APIdoc on API implementations
+
+## Chapter 11 :: Preparing the Production Environment
+
+- Install CORS middleware `npm install cors --save`
+  - Initialize CORS updating `libs/middleware.js`
+- Install `Winston` and `Morgan` for log processing
+  - `npm install winston morgan --save`
+  - Update `libs/config.development.js` and `libs/middlewares.js`
+    - Change `new winston.Logger` to `new winston.createLogger`
+- Create Clusters middleware `clusters.js`
+  - Update `package.json` with cluster script command
+- Install GZIP middleware `npm install compression --save`
+- Update to HTTPS generating the self signed certificate
+  - Download the `.key` and `.cert`, rename and put the files in the root directory
+  - Update `libs/boot.js` to use the self signed credentials
+- Install HELMET `npm install helmet --save`
