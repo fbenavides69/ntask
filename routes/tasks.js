@@ -6,7 +6,7 @@ module.exports = app => {
     .get((req, res) => {
       // List all tasks
       Tasks.findAll({
-        where: { user_id: req.user.id }
+        where: { UserId: req.user.id }
       })
         .then(result => res.json(result))
         .catch(error => {
@@ -29,7 +29,7 @@ module.exports = app => {
       // Find a task
       Tasks.findOne({ where: {
         id: req.params.id,
-        user_id: req.user.id
+        UserId: req.user.id
       }})
         .then(result => {
           if (result) {
@@ -46,7 +46,7 @@ module.exports = app => {
       // Update task
       Tasks.update(req.body, { where: {
         id: req.params.id,
-        user_id: req.user.id
+        UserId: req.user.id
       }})
         .then(result => res.sendStatus(204))
         .catch(error => {
@@ -57,7 +57,7 @@ module.exports = app => {
       // Delete a task
       Tasks.destroy({ where: {
         id: req.params.id,
-        user_id: req.user.id
+        UserId: req.user.id
       }})
         .then(result => res.sendStatus(204))
         .catch(error => {
