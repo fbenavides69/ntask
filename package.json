@@ -4,8 +4,15 @@
   "description": "Task List API",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run apidoc && node index.js",
+    "apidoc": "apidoc -i routes/ -o public/apidoc",
     "test": "NODE_ENV=test mocha test/**/*.js"
+  },
+  "apidoc": {
+    "name": "Node Task API - Documentation",
+    "template": {
+      "forceLanguage": "en"
+    }
   },
   "author": "Francisco Benavides <francisco.benavides@unosquare.com>",
   "license": "MIT",
@@ -13,6 +20,7 @@
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
+    "apidoc": "^0.17.7",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",

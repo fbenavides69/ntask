@@ -132,3 +132,19 @@ Building APIs with Node.js Examples
 - Fixes due to used of latest `Sequelize` ORM
   - Now the `Tasks` model `associate` attribute is redefined as: `Tasks.associate`
   - The same goes for `Users` model attributess: `Users.associate` and `Users.isPassowrd`
+
+## Chapter 9 :: Testing the Application: Part 2
+
+- Create `test/routes/tasks.js` and `test/routes/users.js`
+  - Create test cases for GET, POST, PUT, and DELETE
+- Fixes due to latest `Sequelize` ORM
+  - Change **deprecated** `findById` to latest `findByPk` in `routes/tasks.js` and `routes/users.js`
+    - Fix `expected` clauses to use `res.text` instead of `res.body`
+  - Add `passport.serializeUser` and `passport.deserializeUser`
+  - Fix `find*` methods with `where` clause, changing `user_id` to `UserId`
+
+## Chapter 10 :: Documenting the API
+- Install `npm install apidoc --save-dev`
+- Update `package.json` to add the **apidoc** command
+- Create `public/` folder and update `middleware.js`
+- Add APIdoc on API implementations
