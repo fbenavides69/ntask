@@ -15,3 +15,7 @@ yarn.lock
 
 # Apidoc
 public/apidoc/
+
+# Logs
+*.log
+
